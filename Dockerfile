@@ -5,7 +5,7 @@ RUN rm -f /etc/apt/apt.conf.d/docker-clean; echo 'Binary::apt::APT::Keep-Downloa
 ENV DEBIAN_FRONTEND=noninteractive
 RUN --mount=type=cache,target=/var/cache/apt --mount=type=cache,target=/var/lib/apt \
     apt update && apt -y upgrade && \
-    apt-get install -y build-essential curl git libudev1
+    apt-get install -y build-essential curl git libudev1 pkg-config
 
 ENV SOL_RELEASE=v1.6.6
 ENV TARGET=x86_64-unknown-linux-gnu
