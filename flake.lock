@@ -65,6 +65,7 @@
         "cargo2nix": "cargo2nix",
         "nixpkgs": "nixpkgs",
         "rust-overlay": "rust-overlay",
+        "solana-rust-src": "solana-rust-src",
         "solana-src": "solana-src"
       }
     },
@@ -84,6 +85,23 @@
       "original": {
         "owner": "oxalica",
         "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "solana-rust-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1618225348,
+        "narHash": "sha256-gRJpgeY3JtBNWhTONYpEXzpDKU3W4PYidhqP4u/tXgk=",
+        "owner": "solana-labs",
+        "repo": "rust",
+        "rev": "e4e31785a049ed266e0adde0acd93a6952d5e8b9",
+        "type": "github"
+      },
+      "original": {
+        "owner": "solana-labs",
+        "ref": "solana-1.50",
+        "repo": "rust",
         "type": "github"
       }
     },

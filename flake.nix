@@ -7,11 +7,15 @@
       # url = "/home/drozdziak1/code/rust/solana";
       flake = false;
     };
+    solana-rust-src = {
+      url = "github:solana-labs/rust/solana-1.50";
+      flake = false;
+    };
     cargo2nix = { url = "github:cargo2nix/cargo2nix"; flake = false; };
     rust-overlay.url = "github:oxalica/rust-overlay";
   };
 
-  outputs = { self, nixpkgs, solana-src, cargo2nix, rust-overlay }:
+  outputs = { self, nixpkgs, solana-src, solana-rust-src, cargo2nix, rust-overlay }:
     (
       let
         system = "x86_64-linux";
@@ -34,7 +38,7 @@
           '';
           installPhase = ''cp -r . $out'';
         };
-        solana-sdk = pkgs.rustBuilder.makePackageSet' {
+        solana-workspace = pkgs.rustBuilder.makePackageSet' {
           packageFun = import ./Cargo.solana.nix;
           rustChannel = rustVersion;
           workspaceSrc = solana-src-hardlinked;
@@ -44,7 +48,7 @@
                 name = "add-binutils";
                 overrideAttrs = oa: {
                   propagatedNativeBuildInputs =
-                    oa.propagatedNativeBuildInputs or [ ] ++ (
+                    oa.propagatedNativeBuildInputs or [] ++ (
                       with pkgs; [
                         jemalloc
                       ]
@@ -55,16 +59,19 @@
           ];
         };
       in
-      {
+        {
 
-        packages."${system}".cargo-build-bpf = (solana-sdk.workspace.solana-cargo-build-bpf { }).bin;
+          packages."${system}" = {
+            cargo-build-bpf = (solana-workspace.workspace.solana-cargo-build-bpf {}).bin;
+            solana-rust = pkgs.callPackage (import ./solana-rust.nix) {inherit solana-rust-src;};
+          };
 
-        defaultPackage."${system}" = self.packages."${system}".cargo-build-bpf;
+          defaultPackage."${system}" = self.packages."${system}".cargo-build-bpf;
 
-        devShell."${system}" = pkgs.mkShell {
-          buildInputs = with pkgs; [ rust-bin.stable."${rustVersion}".default libudev openssl cargo2nix-imported.package ];
-        };
+          devShell."${system}" = pkgs.mkShell {
+            buildInputs = with pkgs; [ rust-bin.stable."${rustVersion}".default libudev openssl cargo2nix-imported.package ];
+          };
 
-      }
+        }
     );
 }
