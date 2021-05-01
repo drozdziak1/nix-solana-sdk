@@ -1,43 +1,12 @@
 {
   "nodes": {
-    "cargo2nix": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1617941001,
-        "narHash": "sha256-g1dDgZqC76JU1yJ5fbjhj3LVbTACgnf6amPuFYqFCbY=",
-        "owner": "cargo2nix",
-        "repo": "cargo2nix",
-        "rev": "14da69bbe13c61f809fe9e0d979cdd8bf6563fcf",
-        "type": "github"
-      },
-      "original": {
-        "owner": "cargo2nix",
-        "repo": "cargo2nix",
-        "type": "github"
-      }
-    },
-    "flake-utils": {
-      "locked": {
-        "lastModified": 1614513358,
-        "narHash": "sha256-LakhOx3S1dRjnh0b5Dg3mbZyH0ToC9I8Y2wKSkBaTzU=",
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "rev": "5466c5bbece17adaab2d82fae80b46e807611bf3",
-        "type": "github"
-      },
-      "original": {
-        "owner": "numtide",
-        "repo": "flake-utils",
-        "type": "github"
-      }
-    },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1619296666,
-        "narHash": "sha256-AEVICEYARkAAZYSZuHRz6u+sZIJky/upwRw6fNMuBBs=",
+        "lastModified": 1620381554,
+        "narHash": "sha256-ju8UcSZyY2/jLg4f0eSwb2NefCLBWeFQCem2tmaiKKc=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "ea5759474ac28cb06dcdc239d71db48fe433f100",
+        "rev": "eb4372d68fc3df484d4858ad8b0b59e09415c3b9",
         "type": "github"
       },
       "original": {
@@ -45,81 +14,22 @@
         "type": "indirect"
       }
     },
-    "nixpkgs_2": {
-      "locked": {
-        "lastModified": 1617325113,
-        "narHash": "sha256-GksR0nvGxfZ79T91UUtWjjccxazv6Yh/MvEJ82v1Xmw=",
-        "owner": "nixos",
-        "repo": "nixpkgs",
-        "rev": "54c1e44240d8a527a8f4892608c4bce5440c3ecb",
-        "type": "github"
-      },
-      "original": {
-        "owner": "NixOS",
-        "repo": "nixpkgs",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
-        "cargo2nix": "cargo2nix",
         "nixpkgs": "nixpkgs",
-        "rust-overlay": "rust-overlay",
-        "solana-rust-src": "solana-rust-src",
-        "solana-src": "solana-src"
+        "solana-bin-src": "solana-bin-src"
       }
     },
-    "rust-overlay": {
-      "inputs": {
-        "flake-utils": "flake-utils",
-        "nixpkgs": "nixpkgs_2"
-      },
-      "locked": {
-        "lastModified": 1619281948,
-        "narHash": "sha256-c8/79kwDKswR0KGfhBYd02jq1FtSTeX4NAeFUAwturI=",
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "rev": "88262ab95b856ec55ec71a054cb0e2505244441f",
-        "type": "github"
-      },
-      "original": {
-        "owner": "oxalica",
-        "repo": "rust-overlay",
-        "type": "github"
-      }
-    },
-    "solana-rust-src": {
+    "solana-bin-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1618225348,
-        "narHash": "sha256-gRJpgeY3JtBNWhTONYpEXzpDKU3W4PYidhqP4u/tXgk=",
-        "owner": "solana-labs",
-        "repo": "rust",
-        "rev": "e4e31785a049ed266e0adde0acd93a6952d5e8b9",
-        "type": "github"
+        "narHash": "sha256-JjzCQ6ZCYRHcQeF/bIGxdEFIqi5dkBPpBfy67cnM2lk=",
+        "type": "tarball",
+        "url": "https://github-releases.githubusercontent.com/121470383/6ace1d80-acd0-11eb-8e40-757cb703d85b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210507%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210507T100859Z&X-Amz-Expires=300&X-Amz-Signature=b85a07905c0310b48d03c103bb4ca1edbd28176646a484908c19c6855ae1d47b&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=121470383&response-content-disposition=attachment%3B%20filename%3Dsolana-release-x86_64-unknown-linux-gnu.tar.bz2&response-content-type=application%2Foctet-stream"
       },
       "original": {
-        "owner": "solana-labs",
-        "ref": "solana-1.50",
-        "repo": "rust",
-        "type": "github"
-      }
-    },
-    "solana-src": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1618607671,
-        "narHash": "sha256-PL3NN1lspQhy9aHe9ehDy8W/UoByivQjseSp9vckN/o=",
-        "owner": "solana-labs",
-        "repo": "solana",
-        "rev": "fe775a971668e45806afa38f8a6fb59bcd7cfe89",
-        "type": "github"
-      },
-      "original": {
-        "owner": "solana-labs",
-        "ref": "v1.6.6",
-        "repo": "solana",
-        "type": "github"
+        "type": "tarball",
+        "url": "https://github.com/solana-labs/solana/releases/download/v1.6.7/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
       }
     }
   },
