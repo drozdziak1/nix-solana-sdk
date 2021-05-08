@@ -1,5 +1,36 @@
 {
   "nodes": {
+    "cargo2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1617941001,
+        "narHash": "sha256-g1dDgZqC76JU1yJ5fbjhj3LVbTACgnf6amPuFYqFCbY=",
+        "owner": "cargo2nix",
+        "repo": "cargo2nix",
+        "rev": "14da69bbe13c61f809fe9e0d979cdd8bf6563fcf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cargo2nix",
+        "repo": "cargo2nix",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1614513358,
+        "narHash": "sha256-LakhOx3S1dRjnh0b5Dg3mbZyH0ToC9I8Y2wKSkBaTzU=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5466c5bbece17adaab2d82fae80b46e807611bf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
     "nixpkgs": {
       "locked": {
         "lastModified": 1620381554,
@@ -14,10 +45,47 @@
         "type": "indirect"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1617325113,
+        "narHash": "sha256-GksR0nvGxfZ79T91UUtWjjccxazv6Yh/MvEJ82v1Xmw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "54c1e44240d8a527a8f4892608c4bce5440c3ecb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
+        "cargo2nix": "cargo2nix",
         "nixpkgs": "nixpkgs",
-        "solana-bin-src": "solana-bin-src"
+        "rust-overlay": "rust-overlay",
+        "solana-bin-src": "solana-bin-src",
+        "solana-src": "solana-src"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1620614925,
+        "narHash": "sha256-ju70leih5XINXymlQMbj+tmQ6OwIbpIBt+8L0IAd8kQ=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "7ad612694103fa3a3e6d06bc3e7c1a0a62856e5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
       }
     },
     "solana-bin-src": {
@@ -30,6 +98,23 @@
       "original": {
         "type": "tarball",
         "url": "https://github.com/solana-labs/solana/releases/download/v1.6.7/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
+      }
+    },
+    "solana-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1620862588,
+        "narHash": "sha256-h+FAdGo//xZbtuqozfqKpMF5PdPtA2Qbdq7DLcxP/5Y=",
+        "owner": "drozdziak1",
+        "repo": "solana",
+        "rev": "49cfdb3802751891d40c26effe27a7911a64899a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drozdziak1",
+        "ref": "relative-symlinks",
+        "repo": "solana",
+        "type": "github"
       }
     }
   },
