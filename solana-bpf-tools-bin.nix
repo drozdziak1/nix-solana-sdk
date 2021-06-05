@@ -5,7 +5,7 @@ stdenv.mkDerivation {
   name = "solana-bpf-tools";
   nativeBuildInputs = [ autoPatchelfHook ];
   buildInputs = [ zlib openssl stdenv.cc.cc.lib ];
-  version = "v1.7";
+  version = "v1.9";
   installPhase = ''
     cp -r . $out
   '';

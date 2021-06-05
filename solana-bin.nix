@@ -10,7 +10,7 @@
 , stdenv
 , writeScriptBin
 , zlib
-, bpfToolsVersion ? "v1.7"
+, bpfToolsVersion
 , bpfToolsCacheDirTarget ? ".cache/solana/${bpfToolsVersion}/bpf-tools"
 }:
 let
@@ -23,7 +23,7 @@ in
 stdenv.mkDerivation {
   name = "solana-bin";
   src = solana-bin-src;
-  version = "1.6.7";
+  version = "1.7.1";
   autoPatchelfIgnoreMissingDeps = "1"; # lib_sgx_*.so libs seem non-essential
   nativeBuildInputs = [ autoPatchelfHook ];
   buildInputs = [
@@ -51,7 +51,11 @@ stdenv.mkDerivation {
     readlink ./bpf-tools # confirm the link is correct
     popd
 
-    wrapProgram $out/bin/cargo-build-bpf --set HOME $solanaHome
+    wrapProgram $out/bin/cargo-build-bpf \
+      --set HOME $solanaHome \
+      --set CARGO $solanaHome/$bpfToolsCacheDirTarget/rust/bin/cargo \
+      --set CARGO_HOME /tmp/nix-solana-sdk-home \
+      --set RUSTC $solanaHome/$bpfToolsCacheDirTarget/rust/bin/rustc
     set +x
   '';
   installPhase = "true";

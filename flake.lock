@@ -91,28 +91,28 @@
     "solana-bin-src": {
       "flake": false,
       "locked": {
-        "narHash": "sha256-JjzCQ6ZCYRHcQeF/bIGxdEFIqi5dkBPpBfy67cnM2lk=",
+        "narHash": "sha256-po5SNUvo1ocM/stckXMCdtywZDH/9H6qNBrOu55Htzg=",
         "type": "tarball",
-        "url": "https://github-releases.githubusercontent.com/121470383/6ace1d80-acd0-11eb-8e40-757cb703d85b?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAIWNJYAX4CSVEH53A%2F20210507%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20210507T100859Z&X-Amz-Expires=300&X-Amz-Signature=b85a07905c0310b48d03c103bb4ca1edbd28176646a484908c19c6855ae1d47b&X-Amz-SignedHeaders=host&actor_id=0&key_id=0&repo_id=121470383&response-content-disposition=attachment%3B%20filename%3Dsolana-release-x86_64-unknown-linux-gnu.tar.bz2&response-content-type=application%2Foctet-stream"
+        "url": "https://github.com/solana-labs/solana/releases/download/v1.7.1/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
       },
       "original": {
         "type": "tarball",
-        "url": "https://github.com/solana-labs/solana/releases/download/v1.6.7/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
+        "url": "https://github.com/solana-labs/solana/releases/download/v1.7.1/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
       }
     },
     "solana-src": {
       "flake": false,
       "locked": {
-        "lastModified": 1620862588,
-        "narHash": "sha256-h+FAdGo//xZbtuqozfqKpMF5PdPtA2Qbdq7DLcxP/5Y=",
+        "lastModified": 1623445196,
+        "narHash": "sha256-qX/x+X4PD/x+WDqXnQTRELWoNHWH+acpLbW/H6al+i4=",
         "owner": "drozdziak1",
         "repo": "solana",
-        "rev": "49cfdb3802751891d40c26effe27a7911a64899a",
+        "rev": "df8e0aeb723303c8f847c47837f53311df7ce6a1",
         "type": "github"
       },
       "original": {
         "owner": "drozdziak1",
-        "ref": "relative-symlinks",
+        "ref": "toolchain-envs",
         "repo": "solana",
         "type": "github"
       }
