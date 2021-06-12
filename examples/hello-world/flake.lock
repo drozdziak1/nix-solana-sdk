@@ -1,0 +1,219 @@
+{
+  "nodes": {
+    "cargo2nix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1617941001,
+        "narHash": "sha256-g1dDgZqC76JU1yJ5fbjhj3LVbTACgnf6amPuFYqFCbY=",
+        "owner": "cargo2nix",
+        "repo": "cargo2nix",
+        "rev": "14da69bbe13c61f809fe9e0d979cdd8bf6563fcf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cargo2nix",
+        "repo": "cargo2nix",
+        "type": "github"
+      }
+    },
+    "cargo2nix_2": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1617941001,
+        "narHash": "sha256-g1dDgZqC76JU1yJ5fbjhj3LVbTACgnf6amPuFYqFCbY=",
+        "owner": "cargo2nix",
+        "repo": "cargo2nix",
+        "rev": "14da69bbe13c61f809fe9e0d979cdd8bf6563fcf",
+        "type": "github"
+      },
+      "original": {
+        "owner": "cargo2nix",
+        "repo": "cargo2nix",
+        "type": "github"
+      }
+    },
+    "flake-utils": {
+      "locked": {
+        "lastModified": 1614513358,
+        "narHash": "sha256-LakhOx3S1dRjnh0b5Dg3mbZyH0ToC9I8Y2wKSkBaTzU=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5466c5bbece17adaab2d82fae80b46e807611bf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "flake-utils_2": {
+      "locked": {
+        "lastModified": 1614513358,
+        "narHash": "sha256-LakhOx3S1dRjnh0b5Dg3mbZyH0ToC9I8Y2wKSkBaTzU=",
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "rev": "5466c5bbece17adaab2d82fae80b46e807611bf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "numtide",
+        "repo": "flake-utils",
+        "type": "github"
+      }
+    },
+    "nix-solana-sdk": {
+      "inputs": {
+        "cargo2nix": "cargo2nix_2",
+        "nixpkgs": "nixpkgs",
+        "rust-overlay": "rust-overlay",
+        "solana-bin-src": "solana-bin-src",
+        "solana-src": "solana-src"
+      },
+      "locked": {
+        "narHash": "sha256-t/UimKW4xJqArVznQ6+nyFLfixHb9/OLS/5pYQLSyJk=",
+        "path": "./../..",
+        "type": "path"
+      },
+      "original": {
+        "path": "./../..",
+        "type": "path"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1620381554,
+        "narHash": "sha256-ju8UcSZyY2/jLg4f0eSwb2NefCLBWeFQCem2tmaiKKc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "eb4372d68fc3df484d4858ad8b0b59e09415c3b9",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1617325113,
+        "narHash": "sha256-GksR0nvGxfZ79T91UUtWjjccxazv6Yh/MvEJ82v1Xmw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "54c1e44240d8a527a8f4892608c4bce5440c3ecb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nixpkgs_3": {
+      "locked": {
+        "lastModified": 1623503007,
+        "narHash": "sha256-O4iQXq4B1XLFK+IA3Xp7UI107Ukp/W/8bgcflFe7y8o=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "bbfe4e6a5ef92be765cd6dc4d6aabc54af935704",
+        "type": "github"
+      },
+      "original": {
+        "id": "nixpkgs",
+        "type": "indirect"
+      }
+    },
+    "nixpkgs_4": {
+      "locked": {
+        "lastModified": 1617325113,
+        "narHash": "sha256-GksR0nvGxfZ79T91UUtWjjccxazv6Yh/MvEJ82v1Xmw=",
+        "owner": "nixos",
+        "repo": "nixpkgs",
+        "rev": "54c1e44240d8a527a8f4892608c4bce5440c3ecb",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "cargo2nix": "cargo2nix",
+        "nix-solana-sdk": "nix-solana-sdk",
+        "nixpkgs": "nixpkgs_3",
+        "rust-overlay": "rust-overlay_2"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "flake-utils": "flake-utils",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1620614925,
+        "narHash": "sha256-ju70leih5XINXymlQMbj+tmQ6OwIbpIBt+8L0IAd8kQ=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "7ad612694103fa3a3e6d06bc3e7c1a0a62856e5f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "rust-overlay_2": {
+      "inputs": {
+        "flake-utils": "flake-utils_2",
+        "nixpkgs": "nixpkgs_4"
+      },
+      "locked": {
+        "lastModified": 1623464191,
+        "narHash": "sha256-z0WxBg7SQVgoxc1H6jfMVa6G7gZ6C7P29SRvugkGPrE=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "b7dfe159d55e5ea7656976177b3f2d404791576d",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "type": "github"
+      }
+    },
+    "solana-bin-src": {
+      "flake": false,
+      "locked": {
+        "narHash": "sha256-po5SNUvo1ocM/stckXMCdtywZDH/9H6qNBrOu55Htzg=",
+        "type": "tarball",
+        "url": "https://github.com/solana-labs/solana/releases/download/v1.7.1/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
+      },
+      "original": {
+        "type": "tarball",
+        "url": "https://github.com/solana-labs/solana/releases/download/v1.7.1/solana-release-x86_64-unknown-linux-gnu.tar.bz2"
+      }
+    },
+    "solana-src": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1623445196,
+        "narHash": "sha256-qX/x+X4PD/x+WDqXnQTRELWoNHWH+acpLbW/H6al+i4=",
+        "owner": "drozdziak1",
+        "repo": "solana",
+        "rev": "df8e0aeb723303c8f847c47837f53311df7ce6a1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "drozdziak1",
+        "ref": "toolchain-envs",
+        "repo": "solana",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

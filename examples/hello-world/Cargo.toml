@@ -1,0 +1,13 @@
+[package]
+name = "hello-world"
+version = "0.1.0"
+authors = ["Stan Drozd <drozdziak1@gmail.com>"]
+edition = "2018"
+
+# Because we skip caro-build-bpf, we need to let cargo2nix know that this should become an *.so
+[lib]
+crate-type = ["cdylib"]
+
+
+[dependencies]
+solana-program = "1.7.1"

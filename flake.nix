@@ -1,5 +1,5 @@
 {
-  description = "A very basic flake";
+  description = "Nix tools for Solana";
 
   inputs = {
     solana-bin-src = {
@@ -74,12 +74,30 @@
                 sha256 = "sha256:104m1c584085dmqsbg1gvcjr55yvnl9nf7yfd5pbrixhm418rn94";
               };
             };
+            solana-bpf-tools-rust = pkgs.stdenv.mkDerivation {
+              src = self.packages."${system}".solana-bpf-tools-bin;
+              name = "solana-bpf-tools-rust";
+              installPhase = ''
+                cp -r rust $out
+              '';
+              fixupPhase = "true";
+            };
             solana-bin = pkgs.callPackage ./solana-bin.nix {
               inherit solana-bin-src bpfToolsVersion;
               cargo-build-bpf = self.packages."${system}".cargo-build-bpf;
               solana-bpf-tools = self.packages."${system}".solana-bpf-tools-bin;
             };
           };
+
+          overlay = final: prev: rec {
+            inherit (self.packages."${system}") solana-bpf-tools-rust; 
+            solanaRustChannel = {
+              cargo = solana-bpf-tools-rust;
+              rustc = solana-bpf-tools-rust;
+              rust-src = null;
+            };
+          };
+
           defaultPackage."${system}" = self.packages."${system}".solana-bin;
 
           devShell."${system}" = pkgs.mkShell {
