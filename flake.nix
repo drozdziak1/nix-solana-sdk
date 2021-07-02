@@ -26,7 +26,13 @@
         rustChannel = "1.52.0";
         bpfToolsVersion = "v1.8";
         cargo2nix-imported = pkgs.callPackage cargo2nix { inherit rust-overlay rustChannel; };
-        pkgs = import nixpkgs { inherit system; overlays = [ rust-overlay.overlay (import "${cargo2nix}/overlay") ]; };
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [
+            rust-overlay.overlay
+            (import "${cargo2nix}/overlay")
+          ];
+        };
 
         # The symlinks in solana's source directory upset the later cargo2nix nbuild
         solana-src-hardlinked = pkgs.stdenv.mkDerivation {
@@ -88,20 +94,18 @@
               solana-bpf-tools = self.packages."${system}".solana-bpf-tools-bin;
             };
           };
+          defaultPackage."${system}" = self.packages."${system}".solana-bin;
 
+          devShell."${system}" = pkgs.mkShell {
+            buildInputs = with pkgs; [ rust-bin.stable."${rustChannel}".default libudev openssl cargo2nix-imported.package ];
+          };
           overlay = final: prev: rec {
-            inherit (self.packages."${system}") solana-bpf-tools-rust; 
+            inherit (self.packages."${system}") solana-bpf-tools-rust;
             solanaRustChannel = {
               cargo = solana-bpf-tools-rust;
               rustc = solana-bpf-tools-rust;
               rust-src = null;
             };
-          };
-
-          defaultPackage."${system}" = self.packages."${system}".solana-bin;
-
-          devShell."${system}" = pkgs.mkShell {
-            buildInputs = with pkgs; [ rust-bin.stable."${rustChannel}".default libudev openssl cargo2nix-imported.package ];
           };
         }
     );

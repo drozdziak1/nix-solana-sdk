@@ -16,18 +16,19 @@
         "type": "github"
       }
     },
-    "cargo2nix_2": {
+    "cargo2nix-solana": {
       "flake": false,
       "locked": {
-        "lastModified": 1617941001,
-        "narHash": "sha256-g1dDgZqC76JU1yJ5fbjhj3LVbTACgnf6amPuFYqFCbY=",
-        "owner": "cargo2nix",
+        "lastModified": 1625344432,
+        "narHash": "sha256-JYr8Eg/HYKoSG7Q2Io4mNTP/d/SiSyoHm2gzOt/RLDw=",
+        "owner": "drozdziak1",
         "repo": "cargo2nix",
-        "rev": "14da69bbe13c61f809fe9e0d979cdd8bf6563fcf",
+        "rev": "6b456abb314badb3f7d1c8264990ebcb3a946f50",
         "type": "github"
       },
       "original": {
-        "owner": "cargo2nix",
+        "owner": "drozdziak1",
+        "ref": "solana",
         "repo": "cargo2nix",
         "type": "github"
       }
@@ -49,11 +50,11 @@
     },
     "flake-utils_2": {
       "locked": {
-        "lastModified": 1614513358,
-        "narHash": "sha256-LakhOx3S1dRjnh0b5Dg3mbZyH0ToC9I8Y2wKSkBaTzU=",
+        "lastModified": 1623875721,
+        "narHash": "sha256-A8BU7bjS5GirpAUv4QA+QnJ4CceLHkcXdRp4xITDB0s=",
         "owner": "numtide",
         "repo": "flake-utils",
-        "rev": "5466c5bbece17adaab2d82fae80b46e807611bf3",
+        "rev": "f7e004a55b120c02ecb6219596820fcd32ca8772",
         "type": "github"
       },
       "original": {
@@ -64,14 +65,14 @@
     },
     "nix-solana-sdk": {
       "inputs": {
-        "cargo2nix": "cargo2nix_2",
+        "cargo2nix": "cargo2nix",
         "nixpkgs": "nixpkgs",
         "rust-overlay": "rust-overlay",
         "solana-bin-src": "solana-bin-src",
         "solana-src": "solana-src"
       },
       "locked": {
-        "narHash": "sha256-t/UimKW4xJqArVznQ6+nyFLfixHb9/OLS/5pYQLSyJk=",
+        "narHash": "sha256-RuH4Vnx7YZ4HhgLJvOVIqAhyCizy8S4PSsBzlnmD9w0=",
         "path": "./../..",
         "type": "path"
       },
@@ -111,11 +112,11 @@
     },
     "nixpkgs_3": {
       "locked": {
-        "lastModified": 1623503007,
-        "narHash": "sha256-O4iQXq4B1XLFK+IA3Xp7UI107Ukp/W/8bgcflFe7y8o=",
+        "lastModified": 1628792056,
+        "narHash": "sha256-3Kfhx2fzcR0rFUm3Z3PQZV3cvVkC9opEou9roIBvEGs=",
         "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "bbfe4e6a5ef92be765cd6dc4d6aabc54af935704",
+        "rev": "6dfd25fdc4fbbde2b13d3140287cee04f5e9e483",
         "type": "github"
       },
       "original": {
@@ -125,11 +126,11 @@
     },
     "nixpkgs_4": {
       "locked": {
-        "lastModified": 1617325113,
-        "narHash": "sha256-GksR0nvGxfZ79T91UUtWjjccxazv6Yh/MvEJ82v1Xmw=",
-        "owner": "nixos",
+        "lastModified": 1628186154,
+        "narHash": "sha256-r2d0wvywFnL9z4iptztdFMhaUIAaGzrSs7kSok0PgmE=",
+        "owner": "NixOS",
         "repo": "nixpkgs",
-        "rev": "54c1e44240d8a527a8f4892608c4bce5440c3ecb",
+        "rev": "06552b72346632b6943c8032e57e702ea12413bf",
         "type": "github"
       },
       "original": {
@@ -140,7 +141,7 @@
     },
     "root": {
       "inputs": {
-        "cargo2nix": "cargo2nix",
+        "cargo2nix-solana": "cargo2nix-solana",
         "nix-solana-sdk": "nix-solana-sdk",
         "nixpkgs": "nixpkgs_3",
         "rust-overlay": "rust-overlay_2"
@@ -171,11 +172,11 @@
         "nixpkgs": "nixpkgs_4"
       },
       "locked": {
-        "lastModified": 1623464191,
-        "narHash": "sha256-z0WxBg7SQVgoxc1H6jfMVa6G7gZ6C7P29SRvugkGPrE=",
+        "lastModified": 1628734358,
+        "narHash": "sha256-T3O05QV0y2a973e8L2p2FbK+1OGAUvRHd7TcHfPtWCE=",
         "owner": "oxalica",
         "repo": "rust-overlay",
-        "rev": "b7dfe159d55e5ea7656976177b3f2d404791576d",
+        "rev": "041c82adbaa6e9322ce4ad59b1778430f3705a50",
         "type": "github"
       },
       "original": {

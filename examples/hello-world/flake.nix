@@ -5,8 +5,8 @@
       {
         url = path:./../..;
       };
-    cargo2nix = {
-      url = github:cargo2nix/cargo2nix;
+    cargo2nix-solana = {
+      url = github:drozdziak1/cargo2nix/solana;
       flake = false;
     };
     rust-overlay = {
@@ -14,16 +14,15 @@
     };
   };
 
-  outputs = { self, nixpkgs, nix-solana-sdk, cargo2nix, rust-overlay }:
+  outputs = { self, nixpkgs, nix-solana-sdk, cargo2nix-solana, rust-overlay }:
     let
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
-        crossSystem = "bpfel-none-none-none";
         overlays =
           [
             rust-overlay.overlay
-            (import "${cargo2nix}/overlay")
+            (import "${cargo2nix-solana}/overlay")
             nix-solana-sdk.overlay # Hey kids, you need rust-overlay and cargo2nix as well!
           ];
       };
@@ -36,7 +35,7 @@
               packageFun = import ./Cargo.nix;
               workspaceSrc = ./.;
             }
-          ).workspace.hello-world {};
+          ).workspace.hello-world { };
         };
         defaultPackage."${system}" = self.packages."${system}".hello-world;
       };
